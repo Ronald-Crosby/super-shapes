@@ -3,16 +3,25 @@ body {
 	color: white;
 }
 
-.tunnel circle {
-	transform-origin: center;
+// utility
+
+.page {
+	border: 4px solid black;
+}
+
+.border-inset {
+	box-shadow: inset 0 0 0px 4px black;
 }
 
 .w-200 {
 	width: 200%;
 }
 
-.border-inset {
-	box-shadow: inset 0 0 0px 4px black;
+// sections
+
+.tunnel circle,
+.crosses path {
+	transform-origin: center;
 }
 
 .conveyor-belt {
@@ -20,6 +29,15 @@ body {
 	border-right: 4px solid black;
 }
 
-.page {
-	border: 4px solid black;
+.square {
+	width: 8px;
+	height: 8px;
+	background: black;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	background: black;
+	border-radius: 50%;
 }
