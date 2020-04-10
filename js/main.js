@@ -5,7 +5,18 @@ const elements = {
 	conveyor: '.conveyor-belt .conveyor',
 	zigzag: '.zigzag path',
 	wave: '.wave path',
+	crosses: '.crosses'
 }
+
+// selects the first child of an element and duplicates it a given number of times
+const duplicateHTML = (el, quantity) => {
+	const elParent = document.querySelector(el)
+	const elArray = new Array(quantity).fill(elParent.innerHTML)
+
+	elParent.innerHTML = elArray.join('')
+}
+
+duplicateHTML(elements.crosses, 10)
 
 // tunnel
 anime({
