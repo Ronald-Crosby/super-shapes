@@ -11,10 +11,10 @@
 </head>
 
 <body>
-	<main class="center flex flex-wrap min-vh-100 items-stretch | page">
-		<!--first column-->
-		<section class="w-100 w-third-ns flex flex-wrap">
+	<main class="center flex flex-wrap vh-100 items-stretch overflow-hidden-ns | page">
 
+		<!--first column-->
+		<section class="w-100 w-third-ns flex flex-wrap vh-100">
 			<div class="w-100 h-50 overflow-hidden | conveyor-belt border-inset">
 				<div class="h-100 flex w-200 items-stretch | conveyor border-inset">
 					<div class="w-25 h-100 bg-red | border-inset"></div>
@@ -49,7 +49,7 @@
 		</section>
 
 		<!--second column-->
-		<section class="w-100 w-third-ns flex flex-wrap">
+		<section class="w-100 w-third-ns flex flex-wrap vh-100">
 			<div class="w-100 h-25 bg-blue pa4 | border-inset">
 				<svg width="100%" height="100%" viewBox="0 0 640 55" xmlns="http://www.w3.org/2000/svg" fill="#000000">
 					<path
@@ -81,7 +81,7 @@
 		</section>
 
 		<!--third column-->
-		<section class="w-100 w-third-ns flex flex-wrap">
+		<section class="w-100 w-third-ns flex flex-wrap vh-100">
 			<div class="w-100 h-50 bg-purple pa4 | border-inset">
 				<svg width="100%" height="100%" viewBox="0 0 498 495" xmlns="http://www.w3.org/2000/svg" class="zigzag">
 					<g stroke="black" stroke-width="10" fill="none">
@@ -91,22 +91,27 @@
 					</g>
 				</svg>
 			</div>
-			<div class="w-100 h-25 bg-red flex flex-wrap | border-inset">
-				<div class="w-50 h-50 bg-blue | border-inset"></div>
-				<div class="w-50 h-50 bg-purple | border-inset"></div>
-				<div class="w-50 h-50 bg-red | border-inset"></div>
-				<div class="w-50 h-50 bg-yellow | border-inset"></div>
+
+			<div class="w-100 h-25 bg-red flex flex-wrap | border-inset boxes">
+				<div class="w-50 h-50 | border-inset box flash"></div>
 			</div>
+
 			<div class="w-50 h-25 bg-blue flex flex-wrap justify-center items-center pa3 | border-inset dots">
 				<div class="w-20">
 					<div class="dot center"></div>
 				</div>
 			</div>
-			<div class="w-50 h-25 bg-purple | border-inset"></div>
+			<div class="w-50 h-25 bg-purple | border-inset">
+				<svg width="100%" height="100%" viewBox="0 0 200 200" stroke="#000" stroke-width="10px" fill="none"
+					xmlns="http://www.w3.org/2000/svg" class="boxTunnel">
+					<rect width="0" height="0" x="50%" y="50%" class="boxTunnelEl" />
+				</svg>
+			</div>
 		</section>
 
 	</main>
-	<script src="./js/main.js" async defer></script>
+	<script src=" ./js/main.js" async defer>
+	</script>
 </body>
 
 </html>

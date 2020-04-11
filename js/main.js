@@ -7,8 +7,12 @@ const elements = {
 	wave: '.wave path',
 	crosses: '.crosses',
 	squares: '.squares',
-	dots: '.dots'
+	dots: '.dots',
+	boxes: '.boxes',
+	boxTunnel: '.boxTunnel'
 }
+
+const colors = ['#FFF636', '#FC3135', '#CB89FC', '#77EBFD']
 
 // selects the first child of an element and duplicates it a given number of times
 const duplicateHTML = (el, quantity) => {
@@ -17,6 +21,55 @@ const duplicateHTML = (el, quantity) => {
 
 	elParent.innerHTML = elArray.join('')
 }
+
+// Box Tunnel
+duplicateHTML(elements.boxTunnel, 6)
+
+const boxTunnelElements = document.querySelectorAll(`${elements.boxTunnel} .boxTunnelEl`)
+
+boxTunnelElements.forEach((box, i) => {
+	const val = (i * 25) + 25
+	box.setAttribute('width', `${val}%`)
+	box.setAttribute('height', `${val}%`)
+	box.style.transform = 'translate(-50%, -50%)'
+})
+
+anime({
+	targets: `${elements.boxTunnel} rect`,
+	rotate: [45, 0, -45],
+	delay: anime.stagger(50),
+	loop: true,
+	autoplay: true,
+	direction: 'alternate',
+	duration: 2000,
+	easing: 'easeInOutSine'
+})
+
+// flashing boxes
+duplicateHTML(elements.boxes, 4)
+
+// apply the colours from the array
+function applyColors() {
+	document.querySelectorAll(`${elements.boxes} .box`).forEach((box, i) => {
+		box.style.backgroundColor = colors[i]
+	})
+}
+
+applyColors()
+
+anime({
+	targets: `${elements.boxes} .box`,
+	backgroundColor: () => {
+		const randomNum = Math.floor(Math.random() * Math.floor(colors.length));
+		return colors[randomNum]
+	},
+	loop: true,
+	easing: 'linear',
+	autoplay: true,
+	direction: 'alternate',
+	duration: 500,
+	delay: anime.stagger(500)
+})
 
 // dots
 duplicateHTML(elements.dots, 20)

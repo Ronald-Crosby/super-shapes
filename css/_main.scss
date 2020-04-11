@@ -6,7 +6,28 @@ body {
 // utility
 
 .page {
-	border: 4px solid black;
+	border-left: 4px solid black;
+	border-right: 4px solid black;
+	position: relative;
+}
+
+.page:after,
+.page:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #000;
+  z-index: 3;
+}
+
+.page:before {
+  top: 0;
+}
+
+.page:after {
+  bottom: 0;
 }
 
 .border-inset {
@@ -20,7 +41,8 @@ body {
 // sections
 
 .tunnel circle,
-.crosses path {
+.crosses path,
+.boxTunnel .boxTunnelEl {
 	transform-origin: center;
 }
 
@@ -40,4 +62,8 @@ body {
 	height: 12px;
 	background: black;
 	border-radius: 50%;
+}
+
+.boxTunnel rect {
+  transform-box: fill-box;
 }
